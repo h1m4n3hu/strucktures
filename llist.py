@@ -55,7 +55,9 @@ class LList:
     def remove(self,pos):
         i=0
         first=self.head
-        while True:
+        while first is not None:
+            if i==pos:
+                print(first.value,"hey")
             first=first.next
             i+=1
 
@@ -70,6 +72,6 @@ n3=Node(23)
 ll.add(n3)
 n3=Node(25)
 ll.add(n3)
-ll.length()
+ll.remove(2)
 
-ll.show()
+#ll.show()
