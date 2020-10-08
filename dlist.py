@@ -7,6 +7,7 @@ class Node:
 class Dll:
     def __init__(self):
         self.head=None
+
     def append(self,a):
         if self.head==None:
             self.head=a
@@ -21,11 +22,23 @@ class Dll:
             a.prev=last
             a.next=None
 
+    def prepend(self,a):
+        first=self.head
+        if first is None:
+            self.head=a
+            a.next=None
+            a.prev=None
+        else:
+            a.next=self.head
+            a.prev=None
+            self.head.prev=a
+            self.head=a
+
     def show(self):
         first=self.head
         while first is not None:
-            print(first.value,first.next.value,first.prev.value)
-            first = first.next      #amazing!! !! !!
+            print(first.value)      #print(first.value,first.next.value,first.prev.value)
+            first=first.next      #amazing!! !! !!
 
 l=Dll()
 n1=Node(10)
@@ -40,4 +53,6 @@ n5=Node(50)
 l.append(n5)
 n6=Node(60)
 l.append(n6)
+
+
 l.show()
