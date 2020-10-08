@@ -57,10 +57,11 @@ class LList:
         first=self.head
         while first is not None:
             if i==pos:
-                print(first.value,"hey")
+                prev.next=first.next
+                first.next=None
+            prev=first
             first=first.next
             i+=1
-
 
 
 ll=LList()
@@ -73,5 +74,5 @@ ll.add(n3)
 n3=Node(25)
 ll.add(n3)
 ll.remove(2)
-
-#ll.show()
+print("===")
+ll.show()
