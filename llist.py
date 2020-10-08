@@ -68,21 +68,33 @@ class LList:
         i=0
         while first is not None:
             if first.value==el:
-                print(i,"qwertyuiop")
+                return i
             first=first.next
             i+=1
 
+    def delete(self,val):
+        k=self.positionOf(val)
+        self.removeAt(k)
+
+    def sum(self):
+        first=self.head
+        sum=0
+        while first is not None:
+            sum+=first.value
+            first=first.next
+        return sum
+
+
 ll=LList()
-n1=Node(19)
+n1=Node(1)
 ll.add(n1)
-n2=Node(21)
+n2=Node(2)
 ll.add(n2)
-n3=Node(23)
+n3=Node(3)
 ll.add(n3)
-n3=Node(25)
+n3=Node(4)
 ll.add(n3)
-n4=Node(27)
+n4=Node(5)
 ll.add(n4)
-ll.positionOf(25)
 
 ll.show()
