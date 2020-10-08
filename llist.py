@@ -52,7 +52,7 @@ class LList:
             i+=1
         print(i)
 
-    def remove(self,pos):
+    def removeAt(self,pos):
         i=0
         first=self.head
         while first is not None:
@@ -73,6 +73,6 @@ n3=Node(23)
 ll.add(n3)
 n3=Node(25)
 ll.add(n3)
-ll.remove(2)
-print("===")
+ll.removeAt(2)
+
 ll.show()
