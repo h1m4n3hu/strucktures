@@ -63,16 +63,26 @@ class LList:
             first=first.next
             i+=1
 
+    def positionOf(self,el):
+        first=self.head
+        i=0
+        while first is not None:
+            if first.value==el:
+                print(i,"qwertyuiop")
+            first=first.next
+            i+=1
 
 ll=LList()
 n1=Node(19)
 ll.add(n1)
-n2=Node(22)
+n2=Node(21)
 ll.add(n2)
 n3=Node(23)
 ll.add(n3)
 n3=Node(25)
 ll.add(n3)
-ll.removeAt(2)
+n4=Node(27)
+ll.add(n4)
+ll.positionOf(25)
 
 ll.show()
