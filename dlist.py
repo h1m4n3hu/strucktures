@@ -34,6 +34,13 @@ class Dll:
             self.head.prev=a
             self.head=a
 
+    def pop(self):
+        first=self.head
+        self.head=first.next
+        self.head.next=first.next.next
+        first.next=None
+        self.head.prev=None
+
     def show(self):
         first=self.head
         while first is not None:
@@ -53,6 +60,6 @@ n5=Node(50)
 l.append(n5)
 n6=Node(60)
 l.append(n6)
-
+l.pop()
 
 l.show()
