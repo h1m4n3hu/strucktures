@@ -55,6 +55,9 @@ class LList:
     def remove(self,pos):
         i=0
         first=self.head
+        while True:
+            first=first.next
+            i+=1
 
 
 
