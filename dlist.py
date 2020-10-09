@@ -36,10 +36,35 @@ class Dll:
 
     def pop(self):
         first=self.head
+        while first is not None:
+            lastsec=first
+            first=first.next
+        last=lastsec.prev
+        last.next=None
+        lastsec.next=None
+        lastsec.prev=None
+
+    def poptop(self):
+        first=self.head
         self.head=first.next
         self.head.next=first.next.next
         first.next=None
         self.head.prev=None
+
+    def remove(self,pos):
+        i=0
+        first=self.head
+        while first is not None:
+            want=first
+            if i==pos:
+                before=want.prev
+                after=want.next
+                before.next=after
+                after.prev=before
+                want.prev=None
+                want.next=None
+            first=first.next
+            i+=1
 
     def show(self):
         first=self.head
@@ -60,6 +85,6 @@ n5=Node(50)
 l.append(n5)
 n6=Node(60)
 l.append(n6)
-l.pop()
+l.remove(4)
 
 l.show()
