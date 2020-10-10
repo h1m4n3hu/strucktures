@@ -34,6 +34,15 @@ class LList:
                 return(True)
             self.head=self.head.next
 
+    def setAt(self,index,value):
+        i=0
+        last=self.head
+        while last:
+            if i==index:
+                last.value=value
+            last=last.next
+            i+=1
+
 l=LList()
 l.push(Node(11))
 l.push(Node(22))
@@ -46,4 +55,4 @@ l.push(Node(88))
 l.push(Node(99))
 
 
-#l.show()
+l.show()
