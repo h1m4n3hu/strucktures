@@ -111,10 +111,7 @@ class LList:
             first=first.next
 
     def isPal(self):
-        first=self.head
-        while first is not None:
-            first=first.next
-
+        pass
 
 
 ll=LList()
@@ -122,7 +119,7 @@ ll.add(Node(1))
 ll.add(Node(2))
 ll.add(Node(3))
 ll.add(Node(4))
-ll.add(Node(1))
+ll.add(Node(5))
 #ll.add(Node(6))
 #ll.add(Node(7))
 #ll.add(Node(8))
