@@ -111,7 +111,8 @@ class LList:
             first=first.next
 
     def isPal(self,l1,l2):
-        pass
+        if k1==k2:return True
+        else:return False
 
 
 ll=LList()
@@ -125,10 +126,13 @@ ll.add(Node(5))
 #ll.add(Node(8))
 #ll.add(Node(9))
 k1=ll
-k1.show()
+print(k1.head.value)
+#k1.show()
 print("===")
 ll.reverse()
 k2=ll
-k2.show()
+#k2.show()
+print(k2.head.value)
+print(ll.isPal(k1,k2))
 
 #ll.show()
