@@ -110,8 +110,10 @@ class LList:
                 pass
             first=first.next
 
-    def isPal(self):
-        pass
+    def isPal(self,temp):
+        if temp:
+            self.isPal(temp.next)
+            print(temp.value)
 
 
 ll=LList()
@@ -124,6 +126,6 @@ ll.add(Node(5))
 #ll.add(Node(7))
 #ll.add(Node(8))
 #ll.add(Node(9))
-ll.isPal()
+ll.isPal(ll.head)
 
 #ll.show()
