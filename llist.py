@@ -84,17 +84,54 @@ class LList:
             first=first.next
         return sum
 
+    def reverse(self):
+        first=self.head
+        cur=None
+        while first is not None:
+            k=first.next
+            first.next,cur=cur,first
+            #cur=first
+            first=k
+        self.head=cur
+
+
+    def even(self):
+        first=self.head
+        while first is not None:
+            if first.value%2==0:
+                print(first.value)
+            first=first.next
+
+    def isFibb(self):
+        first=self.head
+        while first and first.next and first.next.next:
+            if first.value+first.next.value==first.next.next.value:
+                print(first.next.next.value)
+            else:
+                pass
+            first=first.next
+
+    def isPal(self,l1,l2):
+        if l1==l2:
+            return True
+        else:
+            return False
+
 
 ll=LList()
-n1=Node(1)
-ll.add(n1)
-n2=Node(2)
-ll.add(n2)
-n3=Node(3)
-ll.add(n3)
-n3=Node(4)
-ll.add(n3)
-n4=Node(5)
-ll.add(n4)
+ll.add(Node(1))
+ll.add(Node(2))
+ll.add(Node(3))
+ll.add(Node(2))
+ll.add(Node(1))
+#ll.add(Node(6))
+#ll.add(Node(7))
+#ll.add(Node(8))
+#ll.add(Node(9))
+l1=ll
+print(ll.reverse())
+print(l1)
 
-ll.show()
+print(ll.isPal(l1,l2))
+
+#ll.show()
