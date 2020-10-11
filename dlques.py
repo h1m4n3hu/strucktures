@@ -36,16 +36,47 @@ class Dlist:
             last=last.prev
 
     def rev(self):
-        first=self.head
+        curr = None
+        first = self.head
         while first:
-            pass
+            curr=first
+            first.next, first.prev = first.prev, first.next
+            first = first.prev
+        self.head = curr
+
+    def remove(self,index):
+        first=self.head
+        i=0
+        while i<index:
+            previ=first
+            first=first.next
+            nexti=first.next
+            i+=1
+        previ.next=nexti
+        nexti.prev=previ
+
+
+    def revTedTalks(self):
+        curr = None
+        first = self.head
+        while first:
+            curr = first
+            "curr = first.prev"
+            "first.prev= first.next"
+            first.next, first.prev= first.prev, first.next
+            "first.next = curr"
+            first = first.prev
+        self.head=curr
+
 
 l=Dlist()
 l.append(Node(10))
 l.append(Node(20))
 l.append(Node(30))
 l.append(Node(40))
+l.append(Node(50))
+l.append(Node(60))
 
-l.rev()
 print("===")
 l.show()
+l.showRev()

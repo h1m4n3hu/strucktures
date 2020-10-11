@@ -88,7 +88,7 @@ class LList:
         first=self.head
         cur=None
         while first is not None:
-            k=first.next
+            k = first.next
             first.next,cur=cur,first
             #cur=first
             first=k
@@ -128,6 +128,6 @@ ll.add(Node(5))
 #ll.add(Node(7))
 #ll.add(Node(8))
 #ll.add(Node(9))
-ll.length()
+ll.reverse()
 
-#ll.show()
+ll.show()
