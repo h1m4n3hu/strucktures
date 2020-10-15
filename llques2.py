@@ -16,6 +16,14 @@ class LList:
                 first=first.next
             first.next=value
 
+    def place(self,value):
+        if self.head==None:
+            self.head=value
+        else:
+            first=self.head
+            self.head=value
+            value.next=first
+
     def show(self):
         first=self.head
         while first is not None:
@@ -73,19 +81,63 @@ class LList:
                 print("hello")
             k=k.next
 
+    def modnod(self,n):
+        k=self.head
+        res=None
+        while k and k.next:
+            if k.value%n==0:
+                res=k.value
+            k=k.next
+        print(res)
+
+    def length(self):
+        i=1
+        k=self.head
+        while k and k.next:
+            i+=1
+            k=k.next
+        return i
+
+    def mid(self):
+        first=self.head
+        k=self.length()
+        kk=k//2
+        i=0
+        while i<kk:
+            first=first.next
+            i+=1
+        print(first.value)
+
+    def last_to_first(self):
+        k=self.head
+        while k and k.next:
+            last=k
+            k=k.next
+        last.next=None
+        k.next=None
+        self.place(k)
+
+    def mid_to_head(self):
+        k=self.head
+        len=self.length()
+        i=0
+        while i<len//2:
+            prev=k
+            k=k.next
+            i+=1
+        mid=k
+        prev.next=mid.next
+        mid.next=self.head
+        self.head=mid
 
 l=LList()
 l.push(Node(11))
 l.push(Node(22))
-l.push(Node(22))
 l.push(Node(33))
 l.push(Node(44))
 l.push(Node(55))
-l.push(Node(55))
-l.push(Node(55))
 l.push(Node(66))
 l.push(Node(77))
-l.push(Node(88))
-l.sortlicates()
+l.mid_to_head()
 
 l.show()
