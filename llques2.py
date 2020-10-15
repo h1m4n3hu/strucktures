@@ -23,10 +23,10 @@ class LList:
             first=first.next
 
     def pair_swap(self):
-        first=self.head
-        while first:
-            first.next,first.next=first.next.next,first
-
+        k=self.head
+        while k and k.next and k.next.next:
+            k.value,k.next.value=k.next.value,k.value
+            k=k.next.next
 
 l=LList()
 l.push(Node(11))
