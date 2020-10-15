@@ -130,6 +130,22 @@ class LList:
         mid.next=self.head
         self.head=mid
 
+    def isCircular(self):
+        k=self.head
+        while k and k.next:
+            k=k.next
+        if k.next==self.head:
+            print("circ")
+        else:
+            print("heh")
+
+    def altdelete(self):
+        k=self.head
+        while k and k.next:
+            k.next=k.next.next
+            k=k.next
+            #print(k.value,k.next.value)
+
 l=LList()
 l.push(Node(11))
 l.push(Node(22))
@@ -138,6 +154,8 @@ l.push(Node(44))
 l.push(Node(55))
 l.push(Node(66))
 l.push(Node(77))
-l.mid_to_head()
+l.push(Node(88))
+l.push(Node(99))
+l.altdelete()
 
 l.show()
