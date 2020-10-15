@@ -155,6 +155,13 @@ class LList:
         except:
             pass
 
+    def recur_alt_print(self,n):
+        if n.next:
+            print(n.value)
+            return self.recur_alt_print(n.next.next)
+
+    
+
 l=LList()
 l.push(Node(11))
 l.push(Node(22))
@@ -165,6 +172,6 @@ l.push(Node(66))
 l.push(Node(77))
 l.push(Node(88))
 l.push(Node(99))
-l.printalt()
 
-#l.show()
+
+l.show()
