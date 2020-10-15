@@ -144,7 +144,16 @@ class LList:
         while k and k.next:
             k.next=k.next.next
             k=k.next
-            #print(k.value,k.next.value)
+
+    def printalt(self):
+        k=self.head
+        try:
+            while k:
+                print(k.value)
+                k=k.next.next
+            print(k.value)
+        except:
+            pass
 
 l=LList()
 l.push(Node(11))
@@ -156,6 +165,6 @@ l.push(Node(66))
 l.push(Node(77))
 l.push(Node(88))
 l.push(Node(99))
-l.altdelete()
+l.printalt()
 
-l.show()
+#l.show()
