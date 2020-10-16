@@ -57,16 +57,31 @@ class LList:
         if head.next:
             self.recur_search(head.next,n,i+1)
 
-l=LList()
-l.push(Node(11))
-l.push(Node(22))
-l.push(Node(33))
-l.push(Node(44))
-l.push(Node(55))
-l.push(Node(66))
-l.push(Node(77))
-l.push(Node(88))
-l.push(Node(99))
+    def recurlen(self,head,i=0):
+        if head is None:
+            print(i)
+        if head:
+            self.recurlen(head.next,i+1)
 
+    def rec_index(self,head,value,i=0):
+        if head and head.value==value:
+            print(i)
+        if head:
+            self.rec_index(head.next,value,i+1)
+
+    def is_pal(self,head):
+        if head.next:                   #########
+            self.is_pal(head.next)      #########
+        print(head.value)               #########
+
+l=LList()
+l.push(Node("r"))
+l.push(Node("a"))
+l.push(Node("d"))
+l.push(Node("e"))
+l.push(Node("e"))
+l.push(Node("l"))
+l.push(Node("s"))
+l.rec_index(l.head,"a")
 
 #l.show()
