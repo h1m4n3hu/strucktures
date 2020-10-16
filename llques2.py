@@ -160,18 +160,67 @@ class LList:
             print(n.value)
             return self.recur_alt_print(n.next.next)
 
-    
+    def recur_search(self,n,head,i=0):
+        if head.value==n:
+            print(i)
+        if head.next:
+            self.recur_search(n,head.next,i+1)
+
+    def count(self,value):
+        k=self.head
+        i=0
+        while k:
+            if k.value==value:
+                i+=1
+            k=k.next
+        print(i)
+
+    def insert_list(self,ll,n):
+        i=0
+        k=self.head
+        while i<n:
+            prev=k
+            k=k.next
+            i+=1
+        kk=prev.next
+        prev.next=ll
+        ll.next=kk
+
+    def recur_reverse(self,head):
+        print(head.value)
+        if head.next:
+            self.recur_forward(head.next)
+
+    def recur_forward(self, head):
+        if head.next:
+            self.recur_forward(head.next)
+        print(head.value)
+
+    def recur_del(self,head,n):
+        if head.next and head.next.value==n:
+            head.next=head.next.next
+        if head.next:
+            self.recur_del(head.next,n)
+
+def mult(l1,l2):
+    f1=l1.head
+    s1=""
+    f2=l2.head
+    s2=""
+    while f1:
+        s1+=str(f1.value)
+        f1=f1.next
+    while f2:
+        s2+=str(f2.value)
+        f2=f2.next
+    print(int(s1)*int(s2))
 
 l=LList()
-l.push(Node(11))
-l.push(Node(22))
-l.push(Node(33))
-l.push(Node(44))
-l.push(Node(55))
-l.push(Node(66))
-l.push(Node(77))
-l.push(Node(88))
-l.push(Node(99))
+ll=LList()
+l.push(Node(3))
+l.push(Node(2))
+l.push(Node(1))
+l.push(Node(1))
 
 
-l.show()
+#l.show()
